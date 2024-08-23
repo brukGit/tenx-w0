@@ -33,15 +33,15 @@ To set up this project on your local machine, follow the steps below:
 
 ## Project Structure
     ```bash
-    ├── data/                  # Directory containing raw and cleaned datasets
-    ├── notebooks/             # Jupyter notebooks for EDA and analysis
-    ├── scripts/               # Python scripts for data processing and visualization
-    ├── tests/                 # Unit tests for the project
-    ├── .github/workflows/     # GitHub Actions for CI/CD
-    ├── .vscode/               # Visual Studio Code settings and configurations
-    ├── requirements.txt       # Python dependencies
-    ├── README.md              # Project documentation (this file)
-    └── LICENSE                # License for the project
+        ├── data/                  # Directory containing raw and cleaned datasets
+        ├── notebooks/             # Jupyter notebooks for EDA and analysis
+        ├── scripts/               # Python scripts for data processing and visualization
+        ├── tests/                 # Unit tests for the project
+        ├── .github/workflows/     # GitHub Actions for CI/CD
+        ├── .vscode/               # Visual Studio Code settings and configurations
+        ├── requirements.txt       # Python dependencies
+        ├── README.md              # Project documentation (this file)
+        └── LICENSE                # License for the project
 
 
 ## Usage
