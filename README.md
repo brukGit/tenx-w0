@@ -32,15 +32,17 @@ To set up this project on your local machine, follow the steps below:
 
 
 ## Project Structure
-├── data/                  # Directory containing raw and cleaned datasets
-├── notebooks/             # Jupyter notebooks for EDA and analysis
-├── scripts/               # Python scripts for data processing and visualization
-├── tests/                 # Unit tests for the project
-├── .github/workflows/     # GitHub Actions for CI/CD
-├── .vscode/               # Visual Studio Code settings and configurations
-├── requirements.txt       # Python dependencies
-├── README.md              # Project documentation (this file)
-└── LICENSE                # License for the project
+    ```bash
+    ├── data/                  # Directory containing raw and cleaned datasets
+    ├── notebooks/             # Jupyter notebooks for EDA and analysis
+    ├── scripts/               # Python scripts for data processing and visualization
+    ├── tests/                 # Unit tests for the project
+    ├── .github/workflows/     # GitHub Actions for CI/CD
+    ├── .vscode/               # Visual Studio Code settings and configurations
+    ├── requirements.txt       # Python dependencies
+    ├── README.md              # Project documentation (this file)
+    └── LICENSE                # License for the project
+
 
 ## Usage
 ### Running the Notebooks
@@ -50,7 +52,8 @@ To perform the EDA, navigate to the notebooks/ directory and open the provided J
 
 ### Running Tests
 If you want to run unit tests to ensure that the functions work as expected (although, sorry, currently no test code is provided.):
-    ```bash
+    
+```bash
     pytest
 
 ## Exploratory Data Analysis (EDA) Overview
