@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from io import StringIO
 from datetime import datetime
 
 # Optimize Streamlit configuration
@@ -86,7 +85,7 @@ def create_scatter_matrix(df):
 
 def app():
     st.title("Dashboard | Solar Radiation Measurement")
-    st.write("Link to GitHub repo: [https://github.com/brukGit/tenx-w0/tree/dashboard-dev](https://github.com/brukGit/tenx-w0/tree/dashboard-dev)")
+    st.write("Link to GitHub repo: [https://github.com/brukGit/tenx-w0/tree/dashboard-dev](https://github.com/tenxw0/solar-dashboard)")
 
     # Create three columns
     left_column, middle_column, right_column = st.columns([1, 2, 2])
@@ -100,7 +99,7 @@ def app():
         if file_selection:
             df = load_csv_file(file_selection)
             
-            min_date =pd.to_datetime(df['Timestamp']).min().date()
+            min_date = pd.to_datetime(df['Timestamp']).min().date()
             max_date = pd.to_datetime(df['Timestamp']).max().date()
             
             st.write("Select Date Range:")
@@ -124,22 +123,26 @@ def app():
                 st.dataframe(filtered_df.describe())
                 
                 st.subheader("Summary Plot")
-                summary_fig = create_summary_plot(filtered_df)
-                st.pyplot(summary_fig)
+                if st.button("Generate Summary Plot"):
+                    summary_fig = create_summary_plot(filtered_df)
+                    st.pyplot(summary_fig)
                 
                 st.subheader("Correlation Heatmap")
-                heatmap_fig = create_correlation_heatmap(filtered_df)
-                st.pyplot(heatmap_fig)
+                if st.button("Generate Correlation Heatmap"):
+                    heatmap_fig = create_correlation_heatmap(filtered_df)
+                    st.pyplot(heatmap_fig)
 
             # Right column for bubble chart and scatter matrix
             with right_column:
                 st.subheader("Bubble Chart")
-                bubble_fig = create_bubble_chart(filtered_df)
-                st.pyplot(bubble_fig)
+                if st.button("Generate Bubble Chart"):
+                    bubble_fig = create_bubble_chart(filtered_df)
+                    st.pyplot(bubble_fig)
                 
                 st.subheader("Scatter Matrix")
-                scatter_fig = create_scatter_matrix(filtered_df)
-                st.pyplot(scatter_fig)
+                if st.button("Generate Scatter Matrix"):
+                    scatter_fig = create_scatter_matrix(filtered_df)
+                    st.pyplot(scatter_fig)
         else:
             st.write("No data available for the selected date range.")
     
