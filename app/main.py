@@ -86,6 +86,7 @@ def create_scatter_matrix(df):
 
 def app():
     st.title("Dashboard | Solar Radiation Measurement")
+    st.write("Link to GitHub repo: [https://github.com/brukGit/tenx-w0/tree/dashboard-dev](https://github.com/brukGit/tenx-w0/tree/dashboard-dev)")
 
     # Create three columns
     left_column, middle_column, right_column = st.columns([1, 2, 2])
