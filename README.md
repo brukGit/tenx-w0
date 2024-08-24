@@ -9,6 +9,8 @@ This project involves an Exploratory Data Analysis (EDA) of Solar Radiation Meas
 - [Usage](#usage)
 - [Exploratory Data Analysis (EDA) Overview](#exploratory-data-analysis-eda-overview)
 - [Data Cleaning](#data-cleaning)
+- [Visualizations](#visualizations)
+- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -19,7 +21,7 @@ To set up this project on your local machine, follow the steps below:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/brukGit/tenx-w0.git
-   cd notebooks
+   cd app
 
 2. **Create a virtual environment (optional but recommended)**:
     ```bash
@@ -46,42 +48,48 @@ To set up this project on your local machine, follow the steps below:
 
 ## Usage
 ### Running the Notebooks
-To perform the EDA, navigate to the notebooks/ directory and open the provided Jupyter notebook. The notebook focuses on different aspects of the analysis, including summary statistics, time series analysis, and correlation analysis.
+1. Navigate to the notebooks/ directory.
+2. Open and run the Jupyter notebooks in order to perform the EDA.
+3. To run the Streamlit app locally:
     ```bash
-    jupyter notebook notebooks/eda_analysis.ipynb
-
-### Running Tests
-If you want to run unit tests to ensure that the functions work as expected (although, sorry, currently no test code is provided.):
-    
-```bash
-    pytest
+    streamlit run app/main.py
 
 ## Exploratory Data Analysis (EDA) Overview
 The EDA conducted in this project covers several key areas:
 
-1. Summary Statistics: Calculation of basic statistical measures (mean, median, standard deviation, etc.) for each numeric column to understand the distribution of the data.
-
-2. Data Quality Check: Inspection of missing values, outliers, or incorrect entries, with a focus on columns like GHI, DNI, DHI, and sensor readings (ModA, ModB).
-
-3. Time Series Analysis: Visualization of time-dependent variables such as GHI, DNI, DHI, and ambient temperature (Tamb) to observe patterns, seasonal trends, and anomalies.
-
-4. Impact of Cleaning: Evaluation of the impact of cleaning operations on sensor readings (ModA, ModB) over time.
-
-5. Correlation Analysis: Visualization of correlations between solar radiation components (GHI, DNI, DHI) and temperature measures (TModA, TModB), as well as relationships between wind conditions (WS, WSgust, WD) and solar irradiance.
-
-6. Wind Analysis: Polar plots to identify trends and significant wind events, showing the distribution of wind speed and direction.
-
-7. Temperature Analysis: Investigation of the influence of relative humidity (RH) on temperature readings and solar radiation.
-
-8. Histograms: Frequency distribution visualizations for variables like GHI, DNI, DHI, WS, and temperature metrics.
-
-9. Z-Score Analysis: Calculation of Z-scores to flag data points that are significantly different from the mean.
-
-10. Bubble Charts: Exploration of complex relationships between variables, such as GHI vs. Tamb vs. WS, with bubble size representing an additional variable like RH or BP (Barometric Pressure).
+1. Data loading and initial inspection
+2. Data cleaning and preprocessing
+3. Statistical analysis of solar radiation measurements
+4. Time series analysis
+5. Correlation analysis between different variables
+6. Visualization of key findings
 
 
 ## Data Cleaning
-Based on the initial analysis, the dataset was cleaned by removing the column Comments which was identified as having many null values.
+The data cleaning process involves:
+
+1. Handling missing values
+2. Removing duplicates
+3. Correcting data types
+4. Dealing with outliers
+
+## Visualizations
+The project includes various visualizations to help understand the solar radiation data:
+- Time series plots of solar radiation measurements
+- Correlation heatmaps
+- Distribution plots for key variables
+- Scatter plots to show relationships between variables
+- Effect of 'Cleaning' on ModA and ModB over time
+
+## Deployment
+To deploy the Streamlit app to Streamlit Community Cloud:
+1. Push your code to a GitHub repository.
+2. Go to Streamlit Community Cloud.
+3. Click on "New app" and select your GitHub repository.
+4. Choose the main file path (e.g., app/main.py).
+5. Click "Deploy".
+Ensure your requirements.txt file is up to date with all necessary dependencies.
+
 
 ## Contributing
 Contributions to this project are welcome! If you have suggestions or improvements, feel free to open a pull request or issue on GitHub.
