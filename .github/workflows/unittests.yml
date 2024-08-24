@@ -28,10 +28,6 @@ jobs:
         env:
           PIP_EXTRA_INDEX_URL: https://pypi.org/simple
 
-      - name: Install pywin32 on Windows
-        if: runner.os == 'Windows'
-        run: pip install pywin32
-
       - name: Run tests
         run: |
           pytest  
