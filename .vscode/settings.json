@@ -8,7 +8,7 @@
     ],
     "editor.formatOnSave": true,                     // Automatically format your code on save
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+        "source.organizeImports": "explicit"
     },
     "files.exclude": {
         "**/__pycache__": true,                      // Exclude __pycache__ directories from the file explorer

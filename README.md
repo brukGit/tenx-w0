@@ -33,7 +33,7 @@ To set up this project on your local machine, follow the steps below:
 
 ## Project Structure
     ```bash
-        ├── data/                  # Directory containing raw and cleaned datasets
+        ├── data/                  # Directory containing raw datasets
         ├── notebooks/             # Jupyter notebooks for EDA and analysis
         ├── scripts/               # Python scripts for data processing and visualization
         ├── tests/                 # Unit tests for the project
