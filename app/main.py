@@ -10,7 +10,7 @@ st.set_page_config(layout="wide")
 
 @st.cache_data
 def load_csv_file(file_name):
-    df = pd.read_csv(f'../w0-bonus/data/{file_name}', parse_dates=['Timestamp'])
+    df = pd.read_csv(f'../data/{file_name}', parse_dates=['Timestamp'])
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
     return df
 
